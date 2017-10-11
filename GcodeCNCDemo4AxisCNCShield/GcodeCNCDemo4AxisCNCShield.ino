@@ -223,9 +223,9 @@ static float atan3(float dy,float dx) {
  * @input code the character to look for.
  * @input val the return value if /code/ is not found.
  **/
-float parseNumber(char code,float val) {
-  char *ptr=serialBuffer;  // start at the beginning of buffer
-  while((long)ptr > 1 && (*ptr) && (long)ptr < (long)serialBuffer+sofar) {  // walk to the end
+float parsenumber(char code,float val) {
+  char *ptr=buffer;  // start at the beginning of buffer //SEBSTE: changed serialBuffer to buffer
+  while((long)ptr > 1 && (*ptr) && (long)ptr < (long)buffer+sofar) {  // walk to the end //SEBSTE: changed serialBuffer to buffer
     if(*ptr==code) {  // if you find code on your walk,
       return atof(ptr+1);  // convert the digits that follow into a float and return it
     }
